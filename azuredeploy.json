@@ -136,7 +136,7 @@
       "metadata": {
         "description": "The FQDN of the AD Domain created "
       },
-      "defaultValue": "contoso.local"
+      "defaultValue": "domain.local"
     },
     "sqlServerServiceAccountUserName": {
       "type": "string",
@@ -390,7 +390,7 @@
         "sqlAvailabilitySetName": "sqlAvailabilitySet",
         "adAvailabilitySetName": "adAvailabilitySet"
       },
-      "noOfSqlVMs": 2,
+      "noOfSqlVMs": 3,
       "vmContainerName": "vhds",
       "adPDCVMName": "ad-primary-dc",
       "adBDCVMName": "ad-secondary-dc",
