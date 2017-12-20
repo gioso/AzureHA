@@ -394,7 +394,7 @@
 	"SizeOfSqlDisks": {
       "type": "string",
       "allowedValues": [
-		"128"
+		"128",
         "256",
         "512",
         "1000"
