@@ -235,6 +235,27 @@
       },
       "defaultValue": "Premium_LRS"
     },
+	,
+    "Set3FswStorageAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of  DC Storage Account"
+      }
+    },
+    "Set3FswStorageAccountType": {
+      "type": "string",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_RAGRS",
+        "Premium_LRS",
+		"Premium_GRS"
+      ],
+      "metadata": {
+        "description": "The type of the DC Storage Account created"
+      },
+      "defaultValue": "Premium_LRS"
+    },
 	"NameOfDCSubnet": {
 		"type": "string",
 		"metadata": {
@@ -576,11 +597,17 @@
           "Set2StorageAccountName": {
             "value": "[parameters('Set2StorageAccountName')]"
           },
+		  "Set3FswStorageAccountName": {
+            "value": "[parameters('Set3FswStorageAccountName')]"
+          },
           "Set1StorageAccountType": {
             "value": "[parameters('Set1StorageAccountType')]"
           },
           "Set2StorageAccountType": {
             "value": "[parameters('Set2StorageAccountType')]"
+          },
+		  "Set3FswStorageAccountType": {
+            "value": "[parameters('Set3FswStorageAccountType')]"
           },
           "primaryDCIPAddressNameWithSuffix": {
             "value": "[variables('primaryDCIPAddressNameWithSuffix')]"
