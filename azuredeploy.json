@@ -520,11 +520,11 @@
         }
       }
     ],
-     "virtualNetworkNameWithSuffix": "[concat(parameters('virtualNetworkName'),'-',(parameters('UniqueName'),'-',(parameters('EnvIndex'))]",
-    "primaryDCIPAddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('primaryDCIPAddressName'),'-ip')]",
-    "backupDCIPAddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('backupDCIPAddressName'),'-ip')]",
-    "sql1AddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('sql1AddressName'),'-ip')]",
-    "sql2AddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('sql2AddressName'),'-ip')]",
+     "virtualNetworkNameWithSuffix": "[concat(parameters('virtualNetworkName'),'-',parameters('UniqueName'),'-',parameters('EnvIndex'))]",
+    "primaryDCIPAddressNameWithSuffix": "[concat(parameters('UniqueName'),'-',variables('primaryDCIPAddressName'),'-ip')]",
+    "backupDCIPAddressNameWithSuffix": "[concat(parameters('UniqueName'),'-',variables('backupDCIPAddressName'),'-ip')]",
+    "sql1AddressNameWithSuffix": "[concat(parameters('UniqueName'),'-',variables('sql1AddressName'),'-ip')]",
+    "sql2AddressNameWithSuffix": "[concat(parameters('UniqueName'),'-',variables('sql2AddressName'),'-ip')]",
     "configuration": {
       "vnetwithDNSTemplateURL": "[concat(parameters('templatesBaseUrl'),'/vnet-with-dns-server.json')]",
       "nicTemplateURL": "[concat(parameters('templatesBaseUrl'),'/nic.json')]",
