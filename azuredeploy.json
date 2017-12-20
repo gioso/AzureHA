@@ -7,7 +7,7 @@
       "metadata": {
         "description": "Unique name/client/platform"
       },
-      "defaultValue": "Platform?"
+      "defaultValue": "Platform"
 	},
 	"EnvIndex": {
       "type": "string",
@@ -180,7 +180,7 @@
       "metadata": {
         "description": "The FQDN of the AD Domain created "
       },
-      "defaultValue": "domain.local"
+      "defaultValue": "platform.local"
     },
     "sqlServerServiceAccountUserName": {
       "type": "string",
@@ -389,11 +389,12 @@
       "metadata": {
         "description": "The Sql Server Version"
       },
-      "defaultValue": "SQL2014SP1-WS2012R2"
+      "defaultValue": "SQL2016-WS2012R2"
     },
 	"SizeOfSqlDisks": {
       "type": "string",
       "allowedValues": [
+		"128"
         "256",
         "512",
         "1000"
@@ -401,7 +402,7 @@
       "metadata": {
         "description": "Select size of SQL disks attached"
       },
-      "defaultValue": "SQL2014SP1-WS2012R2"
+      "defaultValue": "128"
     },
     "numberOfSqlVMDisks": {
       "type": "string",
@@ -519,11 +520,11 @@
         }
       }
     ],
-    "virtualNetworkNameWithSuffix": "[substring(concat(parameters('virtualNetworkName'),'-',(parameters('UniqueName'),'-',parameters('EnvIndex'))),0,24)]",
-    "primaryDCIPAddressNameWithSuffix": "[substring(concat(parameters('UniqueName'),'-',(variables('primaryDCIPAddressName'),'-ip'),0,15)]",
-    "backupDCIPAddressNameWithSuffix": "[substring(concat(parameters('UniqueName'),'-',(variables('backupDCIPAddressName'),'-ip'),0,15)]",
-    "sql1AddressNameWithSuffix": "[substring(concat(parameters('UniqueName'),'-',(variables('sql1AddressName'),'-ip'),0,15)]",
-    "sql2AddressNameWithSuffix": "[substring(concat(parameters('UniqueName'),'-',(variables('sql2AddressName'),'-ip'),0,15)]",
+     "virtualNetworkNameWithSuffix": "[concat(parameters('virtualNetworkName'),'-',(parameters('UniqueName'),'-',(parameters('EnvIndex'))]",
+    "primaryDCIPAddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('primaryDCIPAddressName'),'-ip')]",
+    "backupDCIPAddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('backupDCIPAddressName'),'-ip')]",
+    "sql1AddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('sql1AddressName'),'-ip')]",
+    "sql2AddressNameWithSuffix": "[(concat(parameters('UniqueName'),'-',(variables('sql2AddressName'),'-ip')]",
     "configuration": {
       "vnetwithDNSTemplateURL": "[concat(parameters('templatesBaseUrl'),'/vnet-with-dns-server.json')]",
       "nicTemplateURL": "[concat(parameters('templatesBaseUrl'),'/nic.json')]",
