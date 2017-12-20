@@ -53,6 +53,9 @@
     "Set2StorageAccountName": {
       "type": "string"
     },
+	"Set3FswStorageAccountName": {
+      "type": "string"
+    },
     "sqlAvailabilitySetName": {
       "type": "string"
     },
