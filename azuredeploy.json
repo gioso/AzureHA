@@ -235,7 +235,6 @@
       },
       "defaultValue": "Premium_LRS"
     },
-	,
     "Set3FswStorageAccountName": {
       "type": "string",
       "metadata": {
