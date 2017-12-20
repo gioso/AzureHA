@@ -96,7 +96,7 @@
   "variables": {
     "set1storageName": "[parameters('Set1StorageAccountName')]",
     "set2storageName": "[parameters('Set2StorageAccountName')]",
-    "fwstorageName": "[concat(parameters('Set3FswStorageAccountName')), 'fsw')]",
+    "fwstorageName": "[concat(parameters('Set3FswStorageAccountName'), 'fsw')]",
     "diagstorageName": "[concat(parameters('Set1StorageAccountName'), 'diag')]"
   },
   "resources": [
