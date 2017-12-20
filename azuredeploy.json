@@ -201,10 +201,14 @@
         "description": "The name of Sql Server Storage Account"
       }
     },
-    "sqlStorageAccountType": {
+    "Set1StorageAccountType": {
       "type": "string",
       "allowedValues": [
-        "Premium_LRS"
+		"Standard_LRS",
+        "Standard_GRS",
+        "Standard_RAGRS",
+        "Premium_LRS",
+		"Premium_GRS"
       ],
       "metadata": {
         "description": "The type of the Sql Server Storage Account created"
@@ -217,18 +221,19 @@
         "description": "The name of  DC Storage Account"
       }
     },
-    "dcStorageAccountType": {
+    "Set2StorageAccountType": {
       "type": "string",
       "allowedValues": [
         "Standard_LRS",
         "Standard_GRS",
         "Standard_RAGRS",
-        "Premium_LRS"
+        "Premium_LRS",
+		"Premium_GRS"
       ],
       "metadata": {
         "description": "The type of the DC Storage Account created"
       },
-      "defaultValue": "Standard_LRS"
+      "defaultValue": "Premium_LRS"
     },
 	"NameOfDCSubnet": {
 		"type": "string",
@@ -571,11 +576,11 @@
           "Set2StorageAccountName": {
             "value": "[parameters('Set2StorageAccountName')]"
           },
-          "SqlStorageAccountType": {
-            "value": "[parameters('sqlStorageAccountType')]"
+          "Set1StorageAccountType": {
+            "value": "[parameters('Set1StorageAccountType')]"
           },
-          "DcStorageAccountType": {
-            "value": "[parameters('dcStorageAccountType')]"
+          "Set2StorageAccountType": {
+            "value": "[parameters('Set2StorageAccountType')]"
           },
           "primaryDCIPAddressNameWithSuffix": {
             "value": "[variables('primaryDCIPAddressNameWithSuffix')]"

@@ -14,10 +14,10 @@
       "sqlServerServiceAccountPassword":{  
          "value":"GEN-PASSWORD"
       },
-      "sqlStorageAccountType":{  
+      "Set1StorageAccountType":{  
          "value":"Premium_LRS"
       },
-      "dcStorageAccountType":{  
+      "Set2StorageAccountType":{  
          "value":"Standard_LRS"
       },
       "Set1StorageAccountName":{  

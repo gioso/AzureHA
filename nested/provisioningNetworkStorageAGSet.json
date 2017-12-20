@@ -11,10 +11,10 @@
       "location":{  
          "type":"string"
       },
-      "SqlStorageAccountType":{  
+      "Set1StorageAccountType":{  
          "type":"string"
       },
-      "DcStorageAccountType":{  
+      "Set2StorageAccountType":{  
          "type":"string"
       },
       "virtualNetworkName":{  
@@ -52,7 +52,7 @@
          "apiVersion":"2015-05-01-preview",
          "location":"[parameters('location')]",
          "properties":{  
-            "accountType":"[parameters('SqlStorageAccountType')]"
+            "accountType":"[parameters('Set1StorageAccountType')]"
          }
       },
       {  
@@ -61,7 +61,7 @@
          "apiVersion":"2015-05-01-preview",
          "location":"[parameters('location')]",
          "properties":{  
-            "accountType":"[parameters('DcStorageAccountType')]"
+            "accountType":"[parameters('Set2StorageAccountType')]"
          }
       },
       {  
