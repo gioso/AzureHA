@@ -20,10 +20,10 @@
       "dcStorageAccountType":{  
          "value":"Standard_LRS"
       },
-      "sqlStorageAccountName":{  
+      "Set1StorageAccountName":{  
          "value":"GEN-UNIQUE"
       },
-      "dcStorageAccountName":{  
+      "Set2StorageAccountName":{  
          "value":"GEN-UNIQUE"
       },
       "adVMSize":{  

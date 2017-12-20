@@ -47,10 +47,10 @@
     "location": {
       "type": "string"
     },
-    "sqlStorageAccountName": {
+    "Set1StorageAccountName": {
       "type": "string"
     },
-    "dcStorageAccountName": {
+    "Set2StorageAccountName": {
       "type": "string"
     },
     "sqlAvailabilitySetName": {
@@ -94,10 +94,10 @@
     }
   },
   "variables": {
-    "sqlstorageName": "[parameters('sqlStorageAccountName')]",
-    "dcstorageName": "[parameters('dcStorageAccountName')]",
-    "fwstorageName": "[concat(uniquestring(parameters('sqlStorageAccountName')), 'fsw')]",
-    "diagstorageName": "[concat(uniquestring(parameters('sqlStorageAccountName')), 'diag')]"
+    "set1storageName": "[parameters('Set1StorageAccountName')]",
+    "set2storageName": "[parameters('Set2StorageAccountName')]",
+    "fwstorageName": "[concat(uniquestring(parameters('Set1StorageAccountName')), 'fsw')]",
+    "diagstorageName": "[concat(uniquestring(parameters('Set1StorageAccountName')), 'diag')]"
   },
   "resources": [
     {
@@ -146,7 +146,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://',variables('dcstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/',parameters('adPDCVMName'),'-osdisk.vhd')]"
+              "uri": "[concat('http://',variables('set2storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/',parameters('adPDCVMName'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -154,7 +154,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat('http://',variables('dcstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('adPDCVMName'),'data-1.vhd')]"
+                "uri": "[concat('http://',variables('set2storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('adPDCVMName'),'data-1.vhd')]"
               },
               "name": "[concat(parameters('adPDCVMName'),'-data-disk1')]",
               "createOption": "empty",
@@ -242,7 +242,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://',variables('dcstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/',parameters('adBDCVMName'),'-osdisk.vhd')]"
+              "uri": "[concat('http://',variables('set2storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/',parameters('adBDCVMName'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -250,7 +250,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat('http://',variables('dcstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('adBDCVMName'),'data-1.vhd')]"
+                "uri": "[concat('http://',variables('set2storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('adBDCVMName'),'data-1.vhd')]"
               },
               "name": "[concat(parameters('adBDCVMName'),'-data-disk1')]",
               "createOption": "empty",
@@ -309,7 +309,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://',variables('sqlstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/',parameters('sqlVMName'), copyindex(), '-osdisk.vhd')]"
+              "uri": "[concat('http://',variables('set1storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/',parameters('sqlVMName'), copyindex(), '-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -317,7 +317,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat('http://',variables('sqlstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('sqlVMName'), copyindex(), '-Data-1.vhd')]"
+                "uri": "[concat('http://',variables('set1storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('sqlVMName'), copyindex(), '-Data-1.vhd')]"
               },
               "name": "[concat(parameters('sqlVMName'), copyindex(),'-data-disk1')]",
               "caching": "None",
@@ -327,7 +327,7 @@
             },
             {
               "vhd": {
-                "uri": "[concat('http://',variables('sqlstorageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('sqlVMName'), copyindex(), '-Data-2.vhd')]"
+                "uri": "[concat('http://',variables('set1storageName'),'.blob.core.windows.net/',parameters('vmContainerName'),'/', parameters('sqlVMName'), copyindex(), '-Data-2.vhd')]"
               },
               "name": "[concat(parameters('sqlVMName'), copyindex(),'-data-disk2')]",
               "caching": "None",
