@@ -53,9 +53,6 @@
     "Set2StorageAccountName": {
       "type": "string"
     },
-	"Set3FswStorageAccountName": {
-      "type": "string"
-    },
     "sqlAvailabilitySetName": {
       "type": "string"
     },
@@ -99,8 +96,8 @@
   "variables": {
     "set1storageName": "[parameters('Set1StorageAccountName')]",
     "set2storageName": "[parameters('Set2StorageAccountName')]",
-    "fwstorageName": "[concat(parameters('Set3FswStorageAccountName'), 'fsw')]",
-    "diagstorageName": "[concat(parameters('Set1StorageAccountName'), 'diag')]"
+    "fwstorageName": "[concat(uniquestring(parameters('Set1StorageAccountName')), 'fsw')]",
+    "diagstorageName": "[concat(uniquestring(parameters('Set1StorageAccountName')), 'diag')]"
   },
   "resources": [
     {

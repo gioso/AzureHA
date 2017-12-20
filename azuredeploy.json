@@ -83,7 +83,7 @@
       "metadata": {
         "description": "The size of the AD VMs Created"
       },
-      "defaultValue": "Standard_D2s_v3"
+      "defaultValue": "Standard_DS2_v2"
     },
     "sqlVMSize": {
       "type": "string",
@@ -140,7 +140,7 @@
       "metadata": {
         "description": "The size of the SQL VMs Created"
       },
-      "defaultValue": "Standard_E2s_v3"
+      "defaultValue": "Standard_DS2_v2"
     },
     "witnessVMSize": {
       "type": "string",
@@ -173,7 +173,7 @@
       "metadata": {
         "description": "The size of the Witness VM Created"
       },
-      "defaultValue": "Standard_DS1"
+      "defaultValue": "Standard_DS1_v2"
     },
     "domainName": {
       "type": "string",
@@ -235,26 +235,6 @@
       },
       "defaultValue": "Premium_LRS"
     },
-    "Set3FswStorageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "The name of  DC Storage Account"
-      }
-    },
-    "Set3FswStorageAccountType": {
-      "type": "string",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_GRS",
-        "Standard_RAGRS",
-        "Premium_LRS",
-		"Premium_GRS"
-      ],
-      "metadata": {
-        "description": "The type of the DC Storage Account created"
-      },
-      "defaultValue": "Premium_LRS"
-    },
 	"NameOfDCSubnet": {
 		"type": "string",
 		"metadata": {
@@ -274,42 +254,42 @@
       "metadata": {
         "description": "The address range of the new VNET in CIDR format"
       },
-      "defaultValue": "10.0.0.0/24"
+      "defaultValue": "10.0.5.0/24"
     },
     "staticSubnet": {
       "type": "string",
       "metadata": {
         "description": "DC-subnet address range"
       },
-      "defaultValue": "10.0.0.0/27"
+      "defaultValue": "10.0.5.0/27"
     },
     "sqlSubnet": {
       "type": "string",
       "metadata": {
         "description": "DC-subnet address range"
       },
-      "defaultValue": "10.0.0.32/27"
+      "defaultValue": "10.0.5.32/27"
     },
     "adPDCNICIPAddress": {
       "type": "string",
       "metadata": {
         "description": "The IP address of the new AD VM"
       },
-      "defaultValue": "10.0.0.4"
+      "defaultValue": "10.0.5.4"
     },
     "adBDCNICIPAddress": {
       "type": "string",
       "metadata": {
         "description": "The IP address of the new backup AD VM"
       },
-      "defaultValue": "10.0.0.5"
+      "defaultValue": "10.0.5.5"
     },
     "sqlLBIPAddress": {
       "type": "string",
       "metadata": {
         "description": "The IP address of the new SQL Server Internal Load Balancer"
       },
-      "defaultValue": "10.0.0.50"
+      "defaultValue": "10.0.5.50"
     },
     "virtualNetworkName": {
       "type": "string",
@@ -596,17 +576,11 @@
           "Set2StorageAccountName": {
             "value": "[parameters('Set2StorageAccountName')]"
           },
-		  "Set3FswStorageAccountName": {
-            "value": "[parameters('Set3FswStorageAccountName')]"
-          },
           "Set1StorageAccountType": {
             "value": "[parameters('Set1StorageAccountType')]"
           },
           "Set2StorageAccountType": {
             "value": "[parameters('Set2StorageAccountType')]"
-          },
-		  "Set3FswStorageAccountType": {
-            "value": "[parameters('Set3FswStorageAccountType')]"
           },
           "primaryDCIPAddressNameWithSuffix": {
             "value": "[variables('primaryDCIPAddressNameWithSuffix')]"
